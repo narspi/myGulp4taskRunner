@@ -19,7 +19,7 @@
     "gulp-dwebp": "^1.0.2",
     "gulp-file-include": "^2.2.2",
     "gulp-format-html": "^1.2.5",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-image": "^6.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",

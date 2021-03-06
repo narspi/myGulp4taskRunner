@@ -1,5 +1,6 @@
-@import "./libs";
-@import "./helpers/fonts";
+@import "./mixins/mixins";
 @import "./helpers/vars";
 @import "./helpers/global";
+@import "./libs";
+@import "./helpers/generate_fonts";
 @import "./components/components";

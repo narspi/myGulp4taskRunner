@@ -1,5 +1,24 @@
 <section class="top">
   <div class="container">
     <h2>title</h2>
+    @include('../components/custom_chexbox.html',{
+      "labelText": "first text",
+      "mainClass": "test",
+      "name": "test-name",
+      "checked": "false",
+    })
+    @include('../components/custom_chexbox.html',{
+      "labelText": "second text",
+      "mainClass": "test",
+      "name": "test-name",
+      "checked": "false",
+    })
+    @include('../components/custom_chexbox.html',{
+      "labelText": "third text",
+      "mainClass": "test",
+      "name": "test-name",
+      "checked": "true",
+    })
   </div>
+  
 </section>

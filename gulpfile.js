@@ -16,7 +16,7 @@ const cssnano = require('gulp-cssnano');
 const validator = require('gulp-w3c-html-validator');
 const formatHtml = require('gulp-format-html');
 const removeComments = require('gulp-strip-css-comments'); 
-const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-image');
 const cache = require('gulp-cache');
 const webpInHtml = require('gulp-webp-in-html');
 const cwebp = require('gulp-cwebp');
@@ -33,7 +33,7 @@ const htmlInclude = () => {
         prefix: '@',
         basepath: '@file',
     }))
-    .pipe(validator())
+    // .pipe(validator())
     .pipe(formatHtml())
     .pipe(webpInHtml())
     .pipe(dest('app/'))
@@ -193,7 +193,7 @@ const watcher = () => {
             baseDir: "app/",
             
         },
-        tunnel: true,
+        // tunnel: true,
         notify: false,
     });
     watch('src/scss/**/*.scss',translateScss);
