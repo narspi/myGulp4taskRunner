@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-    @include('./components/header.html')
-    @include('./pages/main.html')
-    @include('./components/footer.html')
+    <include src="./src/html/components/header.html" 
+    locals='{
+        "text": "Button"
+    }'></include>
+    <img class="ignore-webp" src="header-bg.jpg" alt="header">
     <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -21,21 +21,26 @@ const cache = require('gulp-cache');
 const webpInHtml = require('gulp-webp-in-html');
 const cwebp = require('gulp-cwebp');
 const dwebp = require('gulp-dwebp');
+const posthtml = require('gulp-posthtml');
+const include = require('posthtml-include');
+const posthtmlWebp = require('posthtml-webp');
 
 
 // Собирает все файлы html в страницы
 
 const htmlInclude = () => {
+
     return src([
         'src/html/index.html',
     ])
-    .pipe(fileinclude({
-        prefix: '@',
-        basepath: '@file',
-    }))
+    .pipe(posthtml([include(), posthtmlWebp({replaceExtension: true,classIgnore: ['ignore-webp']})]))
+    // .pipe(fileinclude({
+    //     prefix: '@',
+    //     basepath: '@file',
+    // }))
     // .pipe(validator())
-    .pipe(formatHtml())
-    .pipe(webpInHtml())
+    // .pipe(formatHtml())
+    // .pipe(webpInHtml())
     .pipe(dest('app/'))
     .pipe(sync.stream());
 }

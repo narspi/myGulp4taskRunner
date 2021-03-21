@@ -1,76 +1,33 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/main.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/main.min.css">
 </head>
-
 <body>
-  <header class="header">
+    <header class="header">
     <div class="container">
-      <nav class="menu">
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a class="menu__link" href="#">
-              My custom menu_point 1
-            </a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">
-              My custom menu_point 2
-            </a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">
-              My custom menu_point 3
-            </a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">
-              My custom menu_point 4
-            </a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">
-              My custom menu_point 5
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="menu">
+            <ul class="menu__list">
+                <!-- @loop('menu_point.html', [
+                    { "point": "My custom menu_point 1", "link": "#" },
+                    { "point": "My custom menu_point 2", "link": "#" },
+                    { "point": "My custom menu_point 3", "link": "#" },
+                    { "point": "My custom menu_point 4", "link": "#" },
+                    { "point": "My custom menu_point 5", "link": "#" },
+                ]) -->
+                Button
+            </ul>
+        </nav>
     </div>
-  </header>
-  <section class="top">
-    <div class="container">
-      <h2>title</h2>
-      <label class="test-label">
-        <span class="test-span"></span>
-        <span class="test-text">first text</span>
-        <input class="hidden test-input" type="checkbox" name="test-name">
-      </label>
-      <label class="test-label">
-        <span class="test-span"></span>
-        <span class="test-text">second text</span>
-        <input class="hidden test-input" type="checkbox" name="test-name">
-      </label>
-      <label class="test-label">
-        <span class="test-span"></span>
-        <span class="test-text">third text</span>
-        <input class="hidden test-input" type="checkbox" name="test-name" checked>
-      </label>
-    </div>
-
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-
-    </div>
-  </footer>
-  <script src="js/libs.min.js"></script>
-  <script src="js/main.js"></script>
+</header>
+    <img class="ignore-webp" src="header-bg.jpg" alt="header">
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
+
+
+
