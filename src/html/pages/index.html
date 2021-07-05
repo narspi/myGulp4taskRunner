@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <include src="includes/header.html">
+        {
+            "text": "снова поменял текст"
+        }
+    </include>
+    <section class="top">
+        <div class="container">
+          <h2>title</h2>
+          <img src="header-bg.svg" alt="fdfd">
+          <picture>
+              <source type="image/webp" srcset="header-bg-1.webp 1x" ></source>
+              <source type="image/webp" srcset="header-bg-2.webp 2x" ></source>
+              <source type="image/jpeg" srcset="header-bg-2.jpg 2x" ></source>
+              <img class="test-webp" src="header-bg.jpg" alt="fdfd">
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="header-bg-1.webp 1x" ></source>
+            <source type="image/webp" srcset="header-bg-2.webp 2x" ></source>
+            <source type="image/jpeg" srcset="header-bg-2.jpg 2x" ></source>
+            <img class="test-webp" src="header-bg.jpg" alt="fdfd">
+        </picture>
+          <img src="header-bg.jpg" alt="fdfd">
+        </div>
+    </section>
+    <include src="includes/footer.html"></include>      
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+

@@ -1,14 +1,13 @@
+const fs = require('fs');
 const {src,dest,watch,series} = require('gulp');
-const scss = require('gulp-sass');
+const scss = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 const sync = require('browser-sync');
 const sourcemaps = require('gulp-sourcemaps');
-const fileinclude = require('gulp-file-include');
 const svgSprite = require('gulp-svg-sprite');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
-const fs = require('fs');
 const del = require('del');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -18,29 +17,20 @@ const formatHtml = require('gulp-format-html');
 const removeComments = require('gulp-strip-css-comments'); 
 const imagemin = require('gulp-image');
 const cache = require('gulp-cache');
-const webpInHtml = require('gulp-webp-in-html');
 const cwebp = require('gulp-cwebp');
 const dwebp = require('gulp-dwebp');
 const posthtml = require('gulp-posthtml');
-const include = require('posthtml-include');
-const posthtmlWebp = require('posthtml-webp');
 
 
 // Собирает все файлы html в страницы
 
 const htmlInclude = () => {
-
     return src([
-        'src/html/index.html',
+        'src/html/pages/index.html',
     ])
-    .pipe(posthtml([include(), posthtmlWebp({replaceExtension: true,classIgnore: ['ignore-webp']})]))
-    // .pipe(fileinclude({
-    //     prefix: '@',
-    //     basepath: '@file',
-    // }))
-    // .pipe(validator())
-    // .pipe(formatHtml())
-    // .pipe(webpInHtml())
+    .pipe(posthtml())
+    .pipe(formatHtml())
+    .pipe(validator())
     .pipe(dest('app/'))
     .pipe(sync.stream());
 }
@@ -63,7 +53,9 @@ const translateScss = () => {
     .pipe(sourcemaps.init())
     .pipe(scss({
         outputStyle: 'expanded'
-    }))
+    })
+    .on('error', scss.logError)
+    )
     .pipe(autoprefixer({
         overrideBrowserslist: 'last 8 versions'
     }))
@@ -198,13 +190,13 @@ const watcher = () => {
             baseDir: "app/",
             
         },
-        // tunnel: true,
+        tunnel: true,
         notify: false,
     });
     watch('src/scss/**/*.scss',translateScss);
-    watch('src/html/**/*.html',htmlInclude);
-    watch('src/js/**/*.js',translateJs);
-    watch('src/images/default/**/*.*',imagesCompress);
+    watch(['src/html/**/*.html','posthtml.config.js'],htmlInclude);
+    // watch('src/js/**/*.js',translateJs);
+    // watch('src/images/default/**/*.*',imagesCompress);
 }
 
 const build = () => {
@@ -224,6 +216,7 @@ exports.delFolder = delFolder;
 exports.build = build;
 exports.libsJs = libsJs;
 exports.imagesCompress = imagesCompress;
+exports.watcher = watcher;
 
 
 

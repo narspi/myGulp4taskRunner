@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-    <link rel="stylesheet" href="css/main.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.min.css">
 </head>
+
 <body>
-    <header class="header">
+  <header class="header">
     <div class="container">
-        <nav class="menu">
-            <ul class="menu__list">
-                <!-- @loop('menu_point.html', [
-                    { "point": "My custom menu_point 1", "link": "#" },
-                    { "point": "My custom menu_point 2", "link": "#" },
-                    { "point": "My custom menu_point 3", "link": "#" },
-                    { "point": "My custom menu_point 4", "link": "#" },
-                    { "point": "My custom menu_point 5", "link": "#" },
-                ]) -->
-                Button
-            </ul>
-        </nav>
+      <nav class="menu">
+        <ul class="menu__list">
+        </ul>
+        <p>
+          снова поменял текст
+        </p>
+      </nav>
     </div>
-</header>
-    <img class="ignore-webp" src="header-bg.jpg" alt="header">
-    <script src="js/libs.min.js"></script>
-    <script src="js/main.js"></script>
+  </header>
+  <section class="top">
+    <div class="container">
+      <h2>title</h2>
+      <img src="header-bg.svg" alt="fdfd">
+      <picture>
+        <source type="image/webp" srcset="header-bg-1.webp 1x">
+        <source type="image/webp" srcset="header-bg-2.webp 2x">
+        <source type="image/jpeg" srcset="header-bg-2.jpg 2x">
+        <img class="test-webp" src="header-bg.jpg" alt="fdfd">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="header-bg.webp">
+        <img src="header-bg.jpg" alt="fdfd">
+      </picture>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+
+    </div>
+  </footer>
+  <script src="js/libs.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
-
-
-
